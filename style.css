@@ -125,75 +125,67 @@ nav .container {
     background: rgba(127, 33, 179, 0.1);
 }
 
-/* Hero */
-#hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    padding-top: 80px;
-    background: radial-gradient(circle at 80% 20%, rgba(127, 33, 179, 0.15), transparent);
-}
-
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.badge {
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
-    font-size: 0.8rem;
-    margin-bottom: 1rem;
-    display: block;
-}
-
-h1 {
-    font-size: 4.5rem;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    color: var(--white);
-}
-
-.highlight {
-    color: var(--primary);
+/* Hero Image & Profile */
+.hero-image-container {
     position: relative;
-}
-
-.lead {
-    font-size: 1.25rem;
-    color: var(--text-muted);
-    margin-bottom: 2.5rem;
-}
-
-.hero-actions {
     display: flex;
-    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
 }
 
-.stat-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(127, 33, 179, 0.2);
-    padding: 2rem;
-    border-radius: 16px;
+.hero-image-wrapper {
+    width: 400px;
+    height: 400px;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 2px solid var(--primary);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(127, 33, 179, 0.3);
+    transform: rotate(3deg);
+    transition: transform 0.5s ease;
+}
+
+.hero-image-wrapper:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.hero-profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-stats-mini {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stat-card-mini {
+    background: var(--bg-alt);
+    border: 1px solid var(--primary);
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     text-align: center;
-    margin-bottom: 1.5rem;
+    min-width: 120px;
 }
 
-.stat-num {
+.stat-num-mini {
     display: block;
-    font-size: 3rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--accent);
+    font-family: 'Space Grotesk', sans-serif;
 }
 
-.stat-label {
+.stat-label-mini {
+    font-size: 0.7rem;
     color: var(--text-muted);
-    font-size: 0.9rem;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* About */
