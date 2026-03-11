@@ -23,6 +23,23 @@
             </ul>
         </div>
     </nav>
+    <section class="section bg-alt">
+    <div class="container">
+        <h2 class="section-title">AI Calculator Service</h2>
+        <div class="contact-card" style="max-width: 400px; margin: 0 auto;">
+            <input type="number" id="num1" placeholder="Число 1" style="width: 100%; margin-bottom: 10px; padding: 10px; border-radius: 5px;">
+            <input type="number" id="num2" placeholder="Число 2" style="width: 100%; margin-bottom: 10px; padding: 10px; border-radius: 5px;">
+            <select id="operation" style="width: 100%; margin-bottom: 20px; padding: 10px; border-radius: 5px;">
+                <option value="add">Сложить (+)</option>
+                <option value="subtract">Вычесть (-)</option>
+                <option value="multiply">Умножить (*)</option>
+                <option value="divide">Разделить (/)</option>
+            </select>
+            <button onclick="runCalculation()" class="btn-primary" style="width: 100%;">Вычислить на Бэкенде</button>
+            <h3 id="calc-result" style="margin-top: 20px; color: #58cfab;"></h3>
+        </div>
+    </div>
+</section>
 
     <header id="hero">
         <div class="container hero-grid">
@@ -231,5 +248,42 @@
     <script>
         lucide.createIcons();
     </script>
+<script>
+  async function connectToBackend() {
+    try {
+      const response = await fetch('http://127.0.0.1:8000/api/v1/info/');
+      const data = await response.json();
+
+      // Находим заголовок (h1) и меняем текст на тот, что пришел из Python
+      if (data.name) {
+        document.querySelector('h1').innerHTML = `I am <span class="text-accent">${data.name}</span>`;
+        console.log("Успех! Данные из бэкенда:", data);
+      }
+    } catch (error) {
+      console.log("Бэкенд запущен, но что-то пошло не так или путь неверный", error);
+    }
+  }
+
+  connectToBackend();
+    async function runCalculation() {
+    const n1 = document.getElementById('num1').value;
+    const n2 = document.getElementById('num2').value;
+    const op = document.getElementById('operation').value;
+    const resultElement = document.getElementById('calc-result');
+
+    try {
+        const response = await fetch('http://127.0.0.1:8000/api/v1/calculator/calculate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ num1: parseFloat(n1), num2: parseFloat(n2), operation: op })
+        });
+
+        const data = await response.json();
+        resultElement.innerText = "Результат: " + data.result;
+    } catch (error) {
+        resultElement.innerText = "Ошибка: сервер не отвечает";
+    }
+}
+</script>
 </body>
 </html>

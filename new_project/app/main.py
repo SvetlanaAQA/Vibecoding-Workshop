@@ -4,10 +4,11 @@ from app.api.v1.router import api_router
 
 app = FastAPI(
     title="Svetlana Pulucciu Portfolio Backend",
+    description="Clean Architecture API for portfolio management",
     version="1.0.0"
 )
 
-# Это тот самый код CORS, который мы обсуждали
+# Configure CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -16,7 +17,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Подключаем ваши эндпоинты (health, info)
 app.include_router(api_router, prefix="/api/v1")
 
 if __name__ == "__main__":

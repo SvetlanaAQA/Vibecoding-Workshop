@@ -5,8 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59708354-dd40-4a67-bf89-c2f35abe656e" name="Changes" comment="Save local changes before pull">
-      <change beforePath="$PROJECT_DIR$/portfolio/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/new_project/app/api/v1/endpoints/health.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/new_project/app/api/v1/endpoints/info.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/new_project/app/api/v1/router.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/new_project/app/domain/calculator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/new_project/app/domain/user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/new_project/app/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/new_project/app/use_cases/calculate.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/new_project/app/use_cases/get_user_info.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/new_project/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +38,9 @@
     "accountId": "a747d6e4-88e9-495f-8393-16fc4a648685"
   }
 }]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -48,6 +61,11 @@
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\Vibecoding Workshop\pythonProject" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="pythonProject" />
