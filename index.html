@@ -23,23 +23,6 @@
             </ul>
         </div>
     </nav>
-    <section class="section bg-alt">
-    <div class="container">
-        <h2 class="section-title">AI Calculator Service</h2>
-        <div class="contact-card" style="max-width: 400px; margin: 0 auto;">
-            <input type="number" id="num1" placeholder="Число 1" style="width: 100%; margin-bottom: 10px; padding: 10px; border-radius: 5px;">
-            <input type="number" id="num2" placeholder="Число 2" style="width: 100%; margin-bottom: 10px; padding: 10px; border-radius: 5px;">
-            <select id="operation" style="width: 100%; margin-bottom: 20px; padding: 10px; border-radius: 5px;">
-                <option value="add">Сложить (+)</option>
-                <option value="subtract">Вычесть (-)</option>
-                <option value="multiply">Умножить (*)</option>
-                <option value="divide">Разделить (/)</option>
-            </select>
-            <button onclick="runCalculation()" class="btn-primary" style="width: 100%;">Вычислить на Бэкенде</button>
-            <h3 id="calc-result" style="margin-top: 20px; color: #58cfab;"></h3>
-        </div>
-    </div>
-</section>
 
     <header id="hero">
         <div class="container hero-grid">
@@ -69,9 +52,9 @@
         <div class="container">
             <h2 class="section-title">Professional Summary</h2>
             <p class="summary-text">
-                Dynamic professional with a unique dual-competency in B2B Sales Management and Technical Engineering. 
-                I specialize in orchestrating complex partnerships and lead generation strategies within AI automation, 
-                grant consulting, and marketing sectors. Recognized for bridging the gap between technical innovation 
+                Dynamic professional with a unique dual-competency in B2B Sales Management and Technical Engineering.
+                I specialize in orchestrating complex partnerships and lead generation strategies within AI automation,
+                grant consulting, and marketing sectors. Recognized for bridging the gap between technical innovation
                 and global market expansion.
             </p>
         </div>
@@ -138,20 +121,6 @@
                         </ul>
                     </div>
                 </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-meta">
-                        <h3>Paymaster</h3>
-                        <span class="role">IT Support Technician</span>
-                        <span class="date">2017 – 2021</span>
-                    </div>
-                    <div class="timeline-content">
-                        <ul>
-                            <li>Serviced payment terminals ensuring secure transaction processing.</li>
-                            <li>Wrote technical specifications for hardware-to-database software updates.</li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -207,11 +176,6 @@
                     <h4>Master's: Systems & Electronic Communications</h4>
                     <p>Technical University of Moldova</p>
                 </div>
-                <div class="edu-card">
-                    <span class="year">2016</span>
-                    <h4>Bachelor's: Teleradiocommunication</h4>
-                    <p>Technical University of Moldova</p>
-                </div>
             </div>
         </div>
     </section>
@@ -230,10 +194,6 @@
                         <i data-lucide="phone"></i>
                         <span>+373 68550840</span>
                     </a>
-                    <div class="contact-item">
-                        <i data-lucide="map-pin"></i>
-                        <span>Chisinau, Moldova</span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -246,44 +206,7 @@
     </footer>
 
     <script>
+        // Инициализация иконок
         lucide.createIcons();
-    </script>
-<script>
-  async function connectToBackend() {
-    try {
-      const response = await fetch('http://127.0.0.1:8000/api/v1/info/');
-      const data = await response.json();
 
-      // Находим заголовок (h1) и меняем текст на тот, что пришел из Python
-      if (data.name) {
-        document.querySelector('h1').innerHTML = `I am <span class="text-accent">${data.name}</span>`;
-        console.log("Успех! Данные из бэкенда:", data);
-      }
-    } catch (error) {
-      console.log("Бэкенд запущен, но что-то пошло не так или путь неверный", error);
-    }
-  }
-
-  connectToBackend();
-    async function runCalculation() {
-    const n1 = document.getElementById('num1').value;
-    const n2 = document.getElementById('num2').value;
-    const op = document.getElementById('operation').value;
-    const resultElement = document.getElementById('calc-result');
-
-    try {
-        const response = await fetch('http://127.0.0.1:8000/api/v1/calculator/calculate', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ num1: parseFloat(n1), num2: parseFloat(n2), operation: op })
-        });
-
-        const data = await response.json();
-        resultElement.innerText = "Результат: " + data.result;
-    } catch (error) {
-        resultElement.innerText = "Ошибка: сервер не отвечает";
-    }
-}
-</script>
-</body>
-</html>
+        // Связь с бэ
